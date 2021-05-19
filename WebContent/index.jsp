@@ -8,5 +8,7 @@
 	</head>
 	<body>
 		<h1>Accueil</h1>
+		<a href="vente.jsp">Ajouter une enchère</a><br>
+		<a href="Serv?op=recherche_encheres">Liste des enchères en cours</a>
 	</body>
 </html>

@@ -1,8 +1,10 @@
 package pack;
 
 import java.io.IOException;
+import java.util.Collection;
 
 import javax.ejb.EJB;
+import javax.persistence.TypedQuery;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +37,15 @@ public class Serv extends HttpServlet {
 		String op = request.getParameter("op");
 
 		if (op != null) {
-			// call the methods corresponding to op
+			if (op.equals("auction_info")) {
+				int ticketNumber = Integer.parseInt(request.getParameter("ticket_number"));
+				request.setAttribute("auctionInfo", facade.getAuctionInfo(ticketNumber));
+				request.getRequestDispatcher("detailsEnchere.jsp").forward(request, response);
+			}
+			if (op.contentEquals("recherche_encheres")) {
+				request.setAttribute("ticketNumbers", facade.getAllTicketNumbers());
+				request.getRequestDispatcher("encheres.jsp").forward(request, response);
+			}
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request,response);
 		}
@@ -45,8 +55,23 @@ public class Serv extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String op = request.getParameter("op");
+
+		if (op != null) {
+			if (op.equals("add_auction")) {
+				int ticketNumber = Integer.parseInt(request.getParameter("number"));
+				String info = request.getParameter("info");
+				
+				AuctionInfo auction = new AuctionInfo();
+				auction.setTicketNumber(ticketNumber);
+				auction.setInfo(info);
+				facade.addAuctionInfo(auction);
+				request.getRequestDispatcher("index.jsp").forward(request,response);
+			}
+		} else {
+			doGet(request, response);
+		}
+		
 	}
 
 }
