@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h1>Rechercher un billet</h1>
-		<form>
+		<form action="Serv?op=resultats_recherche" method=post>
 			<label for="fdepart">Lieu de départ: </label>
   			<input type="text" id="fdepart" name="fdepart"><br>
 		 	<label for="fdepart">Lieu d'arrivée: </label>
@@ -17,6 +17,7 @@
   			<input type="date" id="fdate" name="fdate"><br>
 		 	<label for="fheure">Heure de départ: </label>
   			<input type="time" id="fheure" name="fheure"><br>
+  			<input type="submit" name="rechercher" value="rechercher"/><br>
 		</form>
 	</body>
 </html>

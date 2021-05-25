@@ -43,8 +43,7 @@ public class Serv extends HttpServlet {
 				request.getRequestDispatcher("detailsEnchere.jsp").forward(request, response);
 			}
 			if (op.contentEquals("recherche_encheres")) {
-				request.setAttribute("ticketNumbers", facade.getAllTicketNumbers());
-				request.getRequestDispatcher("encheres.jsp").forward(request, response);
+				request.getRequestDispatcher("recherche.jsp").forward(request, response);
 			}
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request,response);
@@ -67,6 +66,10 @@ public class Serv extends HttpServlet {
 				auction.setInfo(info);
 				facade.addAuctionInfo(auction);
 				request.getRequestDispatcher("index.jsp").forward(request,response);
+			} 
+			if (op.contentEquals("resultats_recherche")) {
+				request.setAttribute("ticketNumbers", facade.getAllTicketNumbers());
+				request.getRequestDispatcher("resultatsRecherche.jsp").forward(request, response);
 			}
 		} else {
 			doGet(request, response);

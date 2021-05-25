@@ -8,8 +8,12 @@
         
         <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
         
-        <class>pack.Personne</class>
-        <class>pack.Adresse</class>
+        <class>pack.Airline</class>
+        <class>pack.AuctionApplication</class>
+        <class>pack.AuctionInfo</class>
+        <class>pack.Ticket</class>
+        <class>pack.TransactionInfo</class>
+        <class>pack.User</class>
         
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />

@@ -3,7 +3,9 @@ package pack;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -20,7 +22,7 @@ public class AuctionInfo {
 	@OneToOne
 	private Ticket ticket;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.REMOVE,  fetch=FetchType.EAGER)
 	private Collection<AuctionApplication> applications;
 
 	

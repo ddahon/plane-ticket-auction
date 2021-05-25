@@ -3,7 +3,9 @@ package pack;
 import java.io.Serializable;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,10 +34,10 @@ public class User {
 	@OneToOne
 	private TransactionInfo sellTransactionInfo;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.REMOVE, fetch=FetchType.EAGER)
 	private Collection<AuctionApplication> auctionApplications;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.REMOVE, fetch=FetchType.EAGER)
 	private Collection<Ticket> ticketsPossessed;
 	
 	/**** Getters and Setters ****/
