@@ -42,9 +42,6 @@ public class Serv extends HttpServlet {
 				request.setAttribute("auctionInfo", facade.getAuctionInfo(ticketNumber));
 				request.getRequestDispatcher("detailsEnchere.jsp").forward(request, response);
 			}
-			if (op.contentEquals("recherche_encheres")) {
-				request.getRequestDispatcher("recherche.jsp").forward(request, response);
-			}
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request,response);
 		}
@@ -68,7 +65,15 @@ public class Serv extends HttpServlet {
 				request.getRequestDispatcher("index.jsp").forward(request,response);
 			} 
 			if (op.contentEquals("resultats_recherche")) {
-				request.setAttribute("ticketNumbers", facade.getAllTicketNumbers());
+				if (request.getParameter("ticketNumber").length() == 0) {
+					// No ticket number has been specified : list all the tickets
+					request.setAttribute("results", facade.getAllAuctions());
+				} else {
+					int ticketNumber = (int)Integer.parseInt(request.getParameter("ticketNumber"));
+					Collection<AuctionInfo> results = facade.search(ticketNumber);
+					request.setAttribute("results", results);
+				}
+				
 				request.getRequestDispatcher("resultatsRecherche.jsp").forward(request, response);
 			}
 		} else {
