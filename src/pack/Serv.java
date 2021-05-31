@@ -65,39 +65,16 @@ public class Serv extends HttpServlet {
 				request.getRequestDispatcher("index.jsp").forward(request,response);
 			} 
 			if (op.contentEquals("resultats_recherche")) {
-				if (request.getParameter("ticketNumber").length()==0) {
+				if (request.getParameter("ticketNumber").length() == 0) {
 					// No ticket number has been specified : list all the tickets
-					Collection<AuctionInfo> auctionList = facade.getAllAuctions();
-					
-					if (auctionList.size() == 0) {
-						// No auction in the database
-						request.setAttribute("resultsFound", false);
-						System.out.println("database empty");
-					} else {
-						request.setAttribute("resultsFound", true);
-						request.setAttribute("results", auctionList);
-					}
-					
+					request.setAttribute("results", facade.getAllAuctions());
 				} else {
 					int ticketNumber = (int)Integer.parseInt(request.getParameter("ticketNumber"));
-					Collection<AuctionInfo> results = facade.searchByNumber(ticketNumber);
-					System.out.println(results);
-					// No results
-					if (results == null) {
-						System.out.println("null");
-						request.setAttribute("resultsFound", false);
-					} else {
-						System.out.println("not null");
-						request.setAttribute("resultsFound", true);
-						request.setAttribute("results", results);
-					}	
+					Collection<AuctionInfo> results = facade.search(ticketNumber);
+					request.setAttribute("results", results);
 				}
 				
 				request.getRequestDispatcher("resultatsRecherche.jsp").forward(request, response);
-			}
-			if (op.contentEquals("buy")) {
-				int ticketNumber = (int)Integer.parseInt(request.getParameter("ticketNumber"));
-				request.getRequestDispatcher("achat").forward(request, response);
 			}
 		} else {
 			doGet(request, response);
