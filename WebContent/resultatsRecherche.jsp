@@ -9,17 +9,14 @@
 	<body>
 	<h3>Résultats de la recherche : </h3>
 	<%
-		if (request.getAttribute("results") != null) {	
+		
+		if ((boolean)request.getAttribute("resultsFound")) {	
 			Collection<AuctionInfo> results = (Collection<AuctionInfo>) request.getAttribute("results");
-			if (results.size() == 0) {
-				out.println("<p>Aucun résultat</p>");
-			} else {
-				for(AuctionInfo result : results) { 
-					out.println("<a href=\"Serv?op=auction_info&ticket_number=" + result.getTicketNumber() + "\">"+ result.getTicketNumber() +"</a><br>");
-				}
+			for(AuctionInfo result : results) { 
+				out.println("<a href=\"Serv?op=auction_info&ticket_number=" + result.getTicketNumber() + "\">"+ result.getTicketNumber() +"</a><br>");
 			}
 		} else {
-			out.println("Aucun résultat");
+			out.println("<p>Aucun résultat</p>");
 		}
 	%>
 	</body>
