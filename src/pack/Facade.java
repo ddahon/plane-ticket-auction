@@ -14,16 +14,25 @@ public class Facade {
 	@PersistenceContext
 	private EntityManager em;
 
+	// Add a new auction
 	public void addAuctionInfo(AuctionInfo info) {
 		em.persist(info);
 	}
 	
+	// Get the auction info corresponding to the ticket number
 	public AuctionInfo getAuctionInfo(int ticketNumber) {
 		return em.find(AuctionInfo.class, ticketNumber);
 	}
 	
-	public Collection<Integer> getAllTicketNumbers() {
-		TypedQuery<Integer> req = em.createQuery("select ticketNumber from AuctionInfo", Integer.class) ;
+	// Get all the auctions
+	public Collection<AuctionInfo> getAllAuctions() {
+		TypedQuery<AuctionInfo> req = em.createQuery("select * from AuctionInfo", AuctionInfo.class) ;
+		return req.getResultList();
+	}
+	
+	// Perform the search
+	public Collection<AuctionInfo> search(int ticketNumber) {
+		TypedQuery<AuctionInfo> req = em.createQuery(String.format("select * from AuctionInfo where ticketNumber = '%d'", ticketNumber), AuctionInfo.class) ;
 		return req.getResultList();
 	}
 	

@@ -9,17 +9,17 @@
 	<body>
 	<h3>Résultats de la recherche : </h3>
 	<%
-		if (request.getAttribute("ticketNumbers") != null) {	
-			Collection<Integer> ticketNumbers = (Collection<Integer>) request.getAttribute("ticketNumbers");
-			if (ticketNumbers.size() == 0) {
+		if (request.getAttribute("results") != null) {	
+			Collection<AuctionInfo> results = (Collection<AuctionInfo>) request.getAttribute("results");
+			if (results.size() == 0) {
 				out.println("<p>Aucun résultat</p>");
 			} else {
-				for(Integer ticketNumber : ticketNumbers) { 
-					out.println("<a href=\"Serv?op=auction_info&ticket_number=" + ticketNumber + "\">"+ ticketNumber +"</a><br>");
+				for(AuctionInfo result : results) { 
+					out.println("<a href=\"Serv?op=auction_info&ticket_number=" + result.getTicketNumber() + "\">"+ result.getTicketNumber() +"</a><br>");
 				}
 			}
 		} else {
-			out.println("Erreur : ticketNumbers==null");
+			out.println("Aucun résultat");
 		}
 	%>
 	</body>

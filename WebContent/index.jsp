@@ -9,6 +9,8 @@
 	<body>
 		<h1>Accueil</h1>
 		<a href="vente.jsp">Ajouter une enchère</a><br>
-		<a href="Serv?op=recherche_encheres">Rechercher une enchère</a>
+		<a href="recherche.jsp">Rechercher une enchère</a><br>
+		<a href="login.jsp">Login</a>
+		
 	</body>
 </html>

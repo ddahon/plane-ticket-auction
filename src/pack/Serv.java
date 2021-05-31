@@ -76,6 +76,10 @@ public class Serv extends HttpServlet {
 				
 				request.getRequestDispatcher("resultatsRecherche.jsp").forward(request, response);
 			}
+			if (op.contentEquals("buy")) {
+				int ticketNumber = (int)Integer.parseInt(request.getParameter("ticketNumber"));
+				request.getRequestDispatcher("achat").forward(request, response);
+			}
 		} else {
 			doGet(request, response);
 		}

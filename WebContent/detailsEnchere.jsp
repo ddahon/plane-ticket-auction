@@ -11,6 +11,10 @@
 			<%
 				AuctionInfo auctionInfo = (AuctionInfo) request.getAttribute("auctionInfo");
 				out.println(auctionInfo.getInfo());
+				out.println("<form action=\"Serv?buy&ticketNumber="+auctionInfo.getTicketNumber()+"\" method=\"post\">");
+				out.println("<input type=\"submit\" value=\"acheter\" name=\"acheter\"");
+				out.printn("</form>");
 			%>
+		
 	</body>
 </html>
