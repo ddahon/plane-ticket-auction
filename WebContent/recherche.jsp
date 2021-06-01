@@ -36,16 +36,14 @@
 	  </div>
 	</nav> 
 	<div class="container-fluid text-center">
-		<h1>Rechercher un billet</h1>
-		<div class="col-sm-6 text-center">
-			<form action="Serv?op=resultats_recherche" method=post class="form">
-	  			<input type="text" id="ticketNumber" name="ticketNumber" placeholder="Ticket Number"><br>
-	  			<input type="text" id="lieuDepart" name="lieuDepart" placeholder="Where From?"><br>
-	  			<input type="text" id="lieuArrivee" name="lieuArrivee" placeholder="Where To?"><br>
-	  			<input type="date" id="date" name="fdate" placeholder="Departure"><br>
-	  			<input type="submit" name="Search" value="Search" class="btn"/><br>
-			</form>
-		</div>
+		<h1>Search for a flight</h1>
+		<form action="Serv?op=resultats_recherche" method=post class="form">
+  			<input type="text" id="ticketNumber" name="ticketNumber" placeholder="Ticket Number"><br>
+  			<input type="text" id="lieuDepart" name="lieuDepart" placeholder="Where From?"><br>
+  			<input type="text" id="lieuArrivee" name="lieuArrivee" placeholder="Where To?"><br>
+  			<input type="date" id="date" name="fdate" placeholder="Departure"><br>
+  			<input type="submit" name="Search" value="Search" class="btn"/><br>
+		</form>
 		
 	</div>
 	</body>

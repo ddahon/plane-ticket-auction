@@ -1,10 +1,14 @@
 package pack;
 
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -13,10 +17,12 @@ import javax.persistence.OneToOne;
 @Entity
 public class Flight {
 	@Id 
+	@GeneratedValue(strategy=
+	GenerationType.IDENTITY)
 	private String flightNumber;
-	
-	private Time departmentTime;
-	private Time arrivalTime;
+	private LocalDate departureDate;
+	private ZonedDateTime departmentTime;
+	private ZonedDateTime arrivalTime;
 	private int aircraftId;
 	private String departmentAirportName;
 	private String arrivalAirportName;
@@ -42,20 +48,20 @@ public class Flight {
 	public void setFightNumber(String flightNumber) {
 		this.flightNumber = flightNumber;
 	}
-
-	public Time getDepartmentTime() {
+	
+	public ZonedDateTime getDepartmentTime() {
 		return departmentTime;
 	}
 
-	public void setDepartmentTime(Time departmentTime) {
+	public void setDepartmentTime(ZonedDateTime departmentTime) {
 		this.departmentTime = departmentTime;
 	}
 
-	public Time getArrivalTime() {
+	public ZonedDateTime getArrivalTime() {
 		return arrivalTime;
 	}
 
-	public void setArrivalTime(Time arrivalTime) {
+	public void setArrivalTime(ZonedDateTime arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
 
@@ -113,5 +119,13 @@ public class Flight {
 
 	public void setTickets(Collection<Ticket> tickets) {
 		this.tickets = tickets;
+	}
+
+	public LocalDate getDepartureDate() {
+		return departureDate;
+	}
+
+	public void setDepartureDate(LocalDate departureDate) {
+		this.departureDate = departureDate;
 	}
 }

@@ -4,19 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>login faiure</title>
-<style>
-body{
-background-color:grey;
-}
- #a {
-    width:50%;
-	height:200px;
-	border: 1px dashed ;
-    background-color:lightyellow;
-    text-align:center;
-}
-</style>
+<title>login failure</title>
 </head>
 <body>
 <div id="a">

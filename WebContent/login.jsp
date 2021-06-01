@@ -4,23 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-utf-8">
-<title>login</title>
+<title>Login</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
- #a {
-    width:50%;
-	height:200px;
-	border: 1px dashed ;
-    background-color:lightyellow;
-    text-align:center;
-}
-body{
-background-color:lightblue;
-}
-</style>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -41,19 +29,19 @@ background-color:lightblue;
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="login.jsp">Sell</a></li>
+	        <li><a href="Serv?op=goto_sell">Sell</a></li>
 	        <li><a href="login.jsp">Login</a></li>
 	      </ul>
 	    </div>
 	  </div>
 	</nav> 
 <div id="a" class="container-fluid text-center">
-<h1>login</h1>
+<h1>Login</h1>
 <form action="check.jsp" method="post">
 
-account:<input type="text" name="id"/>
+<input type="text" name="id" placeholder="username"/>
 <br>
-password:<input type="password" name="password"/>
+<input type="password" name="password" placeholder="password"/>
 <br>
 <input type="submit" value="login"/>
 no account？<a href ="register.jsp">register</a>

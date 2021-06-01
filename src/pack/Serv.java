@@ -1,7 +1,10 @@
 package pack;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.ejb.EJB;
 import javax.persistence.TypedQuery;
@@ -42,6 +45,10 @@ public class Serv extends HttpServlet {
 				request.setAttribute("auctionInfo", facade.getAuctionInfo(ticketNumber));
 				request.getRequestDispatcher("detailsEnchere.jsp").forward(request, response);
 			}
+			if (op.contentEquals("goto_sell")) {
+				// TODO redirect user to login if not logged in
+				request.getRequestDispatcher("vente.jsp").forward(request, response);
+			}
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request,response);
 		}
@@ -54,23 +61,35 @@ public class Serv extends HttpServlet {
 		String op = request.getParameter("op");
 
 		if (op != null) {
-			if (op.equals("add_auction")) {
-				int ticketNumber = Integer.parseInt(request.getParameter("number"));
-				String info = request.getParameter("info");
+			if (op.equals("add_ticket")) {
+				int ticketNumber = Integer.parseInt(request.getParameter("ticketNumber"));
+				String lieuDepart = (String)request.getParameter("lieuDepart");
+				String lieuArrivee = (String)request.getParameter("lieuArrivee");
+				String airlineName = (String)request.getParameter("airlineName");
+				LocalDate departureDate = LocalDate.parse(request.getParameter("date"));
+				float price = Float.parseFloat(request.getParameter("price"));
 				
-				AuctionInfo auction = new AuctionInfo();
-				auction.setTicketNumber(ticketNumber);
-				auction.setInfo(info);
-				facade.addAuctionInfo(auction);
+				Flight flight = new Flight();
+				flight.setDepartmentAirportName(lieuDepart);
+				flight.setArrivalAirportName(lieuArrivee);
+				flight.setDepartureDate(departureDate);
+				
+				Ticket ticket = new Ticket();
+				ticket.setTicketNumber(ticketNumber);
+				ticket.setFlight(flight);
+				ticket.setAirlineName(airlineName);
+				ticket.setPrice(price);
+				
+				facade.addTicket(ticket);
 				request.getRequestDispatcher("index.jsp").forward(request,response);
 			}
 			if (op.contentEquals("resultats_recherche")) {
-				if (request.getParameter("ticketNumber").length() == 0) {
+				if (request.getParameter("ticketNumber").equals("")) {
 					// No ticket number has been specified : list all the tickets
-					request.setAttribute("results", facade.getAllAuctions());
+					request.setAttribute("results", facade.getAllTickets());
 				} else {
 					int ticketNumber = (int)Integer.parseInt(request.getParameter("ticketNumber"));
-					Collection<AuctionInfo> results = facade.searchByNumber(ticketNumber);
+					Collection<Ticket> results = facade.searchByNumber(ticketNumber);
 					request.setAttribute("results", results);
 				}
 				
@@ -78,6 +97,10 @@ public class Serv extends HttpServlet {
 			}
 			if (op.equals("login")) {
 				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}
+			if (op.contentEquals("register")) {
+				String name = request.getParameter("id");
+				String password = request.getParameter("password");
 			}
 		} else {
 			doGet(request, response);

@@ -5,21 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>login success</title>
-<style>
-body{
-background-color:yellow;
-}
- #a { 
-    width:50%;
-	height:200px;
-	border: 1px dashed ;
-    background-color:lightyellow;
-    text-align:center;
-}
-</style>
 </head>
 <body>
- 	 	<nav class="navbar navbar-default navbar-fixed-top">
+ 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -37,7 +25,7 @@ background-color:yellow;
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="login.jsp">Sell</a></li>
+	        <li><a href="Serv?op=goto_sell">Sell</a></li>
 	        <li><a href="login.jsp">Login</a></li>
 	      </ul>
 	    </div>

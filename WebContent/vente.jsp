@@ -9,18 +9,6 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
- #a {
-    width:50%;
-	height:200px;
-	border: 1px dashed ;
-    background-color:lightyellow;
-    text-align:center;
-}
-body{
-background-color:lightblue;
-}
-</style>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -41,24 +29,29 @@ background-color:lightblue;
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="login.jsp">Sell</a></li>
+	        <li><a href="Serv?op=goto_sell">Sell</a></li>
 	        <li><a href="login.jsp">Login</a></li>
 	      </ul>
 	    </div>
 	  </div>
 	</nav> 
-	<div id="a" class="container-fluid text-center">
-		<h1>SELL</h1>
-		<div class="col-sm-6 text-center">
-			<a href ="venteEnchere.jsp">Sell as auction？</a>
-			<form action="Serv?op=sell_op" method=post class="form">
-	  			<input type="text" id="ticketNumber" name="ticketNumber" placeholder="Ticket Number"><br>
-	  			<input type="text" id="lieuDepart" name="lieuDepart" placeholder="Where From?"><br>
-	  			<input type="text" id="lieuArrivee" name="lieuArrivee" placeholder="Where To?"><br>
-	  			<input type="date" id="date" name="fdate" placeholder="Departure"><br>
-	  			<input type="submit" value="sell" class="btn"/>
-			</form>
-			</div>
+	<div class="container-fluid text-center">
+		<h1>Sell</h1>
+		<form action="Serv?op=add_ticket" method=post class="form">
+			<label for="airlineName">Airline</label>
+  			<input type="text" id="airlineName" name="airlineName" placeholder="Airline"><br>
+			<label for="ticketNumber">Ticket Number</label>
+  			<input type="text" id="ticketNumber" name="ticketNumber" placeholder="Ticket Number"><br>
+  			<label for="lieuDepart">Where From?</label>
+  			<input type="text" id="lieuDepart" name="lieuDepart" placeholder="Where From?"><br>
+  			<label for="lieuArrivee">Where To?</label>
+  			<input type="text" id="lieuArrivee" name="lieuArrivee" placeholder="Where To?"><br>
+  			<label for="date">Departure</label>
+  			<input type="date" id="date" name="date" placeholder="Departure"><br>
+  			<label for="price">Price</label>
+  			<input type="number" id="price" name="price" placeholder="Price"><br>
+  			<input type="submit" value="sell" class="btn btn-primary"/>
+		</form>
 	</div>
 
 </body>

@@ -22,6 +22,11 @@ public class Facade {
 		em.persist(info);
 	}
 	
+	// Add a new ticket
+	public void addTicket(Ticket ticket) {
+		em.persist(ticket);
+	}
+	
 	// Get the auction info corresponding to the ticket number
 	public AuctionInfo getAuctionInfo(int ticketNumber) {
 		return em.find(AuctionInfo.class, ticketNumber);
@@ -33,14 +38,20 @@ public class Facade {
 		return req.getResultList();
 	}
 	
+	// Get all the tickets
+		public Collection<Ticket> getAllTickets() {
+			TypedQuery<Ticket> req = em.createQuery("select ticket from Ticket ticket", Ticket.class) ;
+			return req.getResultList();
+		}
+	
 	// Perform the search
-	public Collection<AuctionInfo> searchByNumber(int ticketNumber) {
-		AuctionInfo auction = em.find(AuctionInfo.class, ticketNumber);
-		if (auction == null) {
+	public Collection<Ticket> searchByNumber(int ticketNumber) {
+		Ticket ticket = em.find(Ticket.class, ticketNumber);
+		if (ticket == null) {
 			return null;
 		} else {
-			Collection<AuctionInfo> res = new ArrayList(1);
-			res.add(auction);
+			Collection<Ticket> res = new ArrayList(1);
+			res.add(ticket);
 			return res;
 		}
 

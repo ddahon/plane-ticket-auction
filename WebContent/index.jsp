@@ -31,7 +31,7 @@
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="login.jsp">Sell</a></li>
+	        <li><a href="Serv?op=goto_sell">Sell</a></li>
 	        <li><a href="login.jsp">Login</a></li>
 	      </ul>
 	    </div>
@@ -44,23 +44,33 @@
 	</div>
 	
 	<div class="container-fluid">
-		<div class="col-sm-6 text-center">
-			<h2>Looking for a ticket to buy?</h2>
-			<form action="Serv?op=resultats_recherche" method=post class="form">
-	  			<input type="text" id="ticketNumber" name="ticketNumber" placeholder="Ticket Number"><br>
-	  			<input type="text" id="lieuDepart" name="lieuDepart" placeholder="Where From?"><br>
-	  			<input type="text" id="lieuArrivee" name="lieuArrivee" placeholder="Where To?"><br>
-	  			<input type="date" id="date" name="fdate" placeholder="Departure"><br>
-	  			<input type="submit" name="Search" value="Search" class="btn"/><br>
-			</form>
-		</div>
-		
-		<div class="col-sm-6 text-center">
-			<h2>Have a ticket to sell?</h2>
-			<form action="Serv?op=login" method=post>
-				<input type="submit" name="Login" value="Login" class="btn"/>
-			</form>
-				
+		<div class="row align-items-center">
+			<div class="col">
+				<h2>Looking for a ticket to buy?</h2><br>
+				<form action="Serv?op=resultats_recherche" method=post>
+					<div class="form-group row">
+						<label for="ticketNumber">Ticket Number</label>
+			  			<input type="text" id="ticketNumber" name="ticketNumber" placeholder="Ticket Number" class="form-control">
+					</div>
+					
+					<div class="form-group row">
+						<label for="lieuDepart">Where From?</label>
+						<input type="text" id="lieuDepart" name="lieuDepart" placeholder="Where From?" class="form-control">
+					</div>
+		  			
+		  			<div class="form-group row">
+		  				<label for="lieuArrivee">Where To?</label>
+		  				<input type="text" id="lieuArrivee" name="lieuArrivee" placeholder="Where To?" class="form-control">
+		  			</div>
+		  			
+		  			<div class="form-group row">
+		  				<label for="date">Departure</label>
+		  				<input type="date" id="date" name="date" placeholder="Departure">
+		  			</div>
+		  			
+		  			<input type="submit" name="Search" value="Search" class="btn btn-primary"/><br>
+				</form>
+			</div>
 		</div>
 		
 	</div>
