@@ -63,18 +63,21 @@ public class Serv extends HttpServlet {
 				auction.setInfo(info);
 				facade.addAuctionInfo(auction);
 				request.getRequestDispatcher("index.jsp").forward(request,response);
-			} 
+			}
 			if (op.contentEquals("resultats_recherche")) {
 				if (request.getParameter("ticketNumber").length() == 0) {
 					// No ticket number has been specified : list all the tickets
 					request.setAttribute("results", facade.getAllAuctions());
 				} else {
 					int ticketNumber = (int)Integer.parseInt(request.getParameter("ticketNumber"));
-					Collection<AuctionInfo> results = facade.search(ticketNumber);
+					Collection<AuctionInfo> results = facade.searchByNumber(ticketNumber);
 					request.setAttribute("results", results);
 				}
 				
 				request.getRequestDispatcher("resultatsRecherche.jsp").forward(request, response);
+			}
+			if (op.equals("login")) {
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 		} else {
 			doGet(request, response);

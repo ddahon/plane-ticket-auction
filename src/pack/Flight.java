@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Flight {
 	@Id 
-	private String fightNumber;
+	private String flightNumber;
 	
 	private Time departmentTime;
 	private Time arrivalTime;
@@ -31,16 +31,16 @@ public class Flight {
 	@OneToOne
 	private Aircraft associated_aircraft;
 	
-	@OneToMany(mappedBy="ticket")
+	@OneToMany(mappedBy="flight")
 	private Collection<Ticket> tickets = new ArrayList<>();
 	
 	
 	public String getFightNumber() {
-		return fightNumber;
+		return flightNumber;
 	}
 
-	public void setFightNumber(String fightNumber) {
-		this.fightNumber = fightNumber;
+	public void setFightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
 	}
 
 	public Time getDepartmentTime() {

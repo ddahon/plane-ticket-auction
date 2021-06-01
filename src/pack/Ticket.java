@@ -17,8 +17,11 @@ public class Ticket {
 	
 	private int userID;
 	private float price;
-	private int flightNumber;
+
 	private String airlineName;
+	
+	@ManyToOne
+	private Flight flight; 
 	
 	@ManyToOne
 	private User owner;
@@ -59,12 +62,12 @@ public class Ticket {
 		this.price = price;
 	}
 
-	public int getFlightNumber() {
-		return flightNumber;
+	public Flight getFlight() {
+		return flight;
 	}
 
-	public void setFlightNumber(int flightNumber) {
-		this.flightNumber = flightNumber;
+	public void setFlight(Flight flight) {
+		this.flight = flight;
 	}
 
 	public String getAirlineName() {
