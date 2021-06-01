@@ -44,7 +44,7 @@
 	    </div>
 	  </div>
 	</nav> 
-<div id="a" cass="container-fluid text-center">
+<div id="a" cass="container-fluid text-center" style="position:absolute;left:100px;top:150px">
 <form action="check.jsp" method="post">
  <% request.setCharacterEncoding("UTF-8");
    String id=request.getParameter("id");
@@ -55,7 +55,8 @@
    String password=request.getParameter("password");
    session.setAttribute("password", password);
  %>
- 
+ <br>
+	<br>
  congratulation！<br>
  your account is:<%=id %><br>
  your password is:<%=password %><br>
