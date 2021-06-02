@@ -4,6 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>login success</title>
 </head>
 <body>
@@ -31,7 +35,8 @@
 	    </div>
 	  </div>
 	</nav> 
-<div id="a">
+
+<div class="container-fluid">
 <h1 align="center">
 <a href="usercenter.jsp">continue to user center</a><br>
 </h1>

@@ -10,15 +10,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>register success</title>
 </head>
-<style>
- #a {
-    width:50%;
-	height:200px;
-	border: 1px dashed ;
-    background-color:lightyellow;
-    text-align:center;
-}
-</style>
 <body>
  	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
@@ -38,13 +29,13 @@
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="login.jsp">Sell</a></li>
+	        <li><a href="vente.jsp">Sell</a></li>
 	        <li><a href="login.jsp">Login</a></li>
 	      </ul>
 	    </div>
 	  </div>
-	</nav> 
-<div id="a" cass="container-fluid text-center" style="position:absolute;left:100px;top:150px">
+	</nav>
+<div class="container-fluid text-center" style="position:absolute;left:100px;top:150px">
 <form action="check.jsp" method="post">
  <% request.setCharacterEncoding("UTF-8");
    String id=request.getParameter("id");

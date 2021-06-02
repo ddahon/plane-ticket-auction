@@ -6,7 +6,7 @@
  %>  
 
  <body>  
-  <h2>you've log out</h2>  
+  <h2>you've logged out</h2>  
  </body>  
 
 </html> 

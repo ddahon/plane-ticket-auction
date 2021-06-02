@@ -9,18 +9,6 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
- #a {
-    width:50%;
-	height:200px;
-	border: 1px dashed ;
-    background-color:lightyellow;
-    text-align:center;
-}
-body{
-background-color:lightblue;
-}
-</style>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -41,17 +29,17 @@ background-color:lightblue;
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="login.jsp">Sell</a></li>
+	        <li><a href="vente.jsp">Sell</a></li>
 	        <li><a href="logout.jsp">Logout</a></li>
 	      </ul>
 	    </div>
 	  </div>
 	</nav> 
-<div id="a" class="container-fluid text-center">
-<h1>login</h1>
-<form action="check.jsp" method="post">
+<div class="container-fluid text-center">
+<h1>Login</h1>
+<form action="Serv?op=check" method="post">
 
-account:<input type="text" name="id"/>
+username:<input type="text" name="id"/>
 <br>
 password:<input type="password" name="password"/>
 <br>

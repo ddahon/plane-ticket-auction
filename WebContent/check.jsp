@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-utf-8">
-<title>check</title>
+<title>Check</title>
 </head>
 <body>
 <form method="post" action="">

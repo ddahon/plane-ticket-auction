@@ -46,8 +46,13 @@ public class Serv extends HttpServlet {
 				request.getRequestDispatcher("detailsEnchere.jsp").forward(request, response);
 			}
 			if (op.contentEquals("goto_sell")) {
-				// TODO redirect user to login if not logged in
-				request.getRequestDispatcher("vente.jsp").forward(request, response);
+				// redirect user to login if not logged in
+				if (request.getSession().getAttribute("user") == null) {
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+				} else {
+					request.getRequestDispatcher("vente.jsp").forward(request, response);
+				}
+				
 			}
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request,response);
@@ -96,11 +101,28 @@ public class Serv extends HttpServlet {
 				request.getRequestDispatcher("resultatsRecherche.jsp").forward(request, response);
 			}
 			if (op.equals("login")) {
+				
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 			if (op.contentEquals("register")) {
 				String name = request.getParameter("id");
 				String password = request.getParameter("password");
+				User user = new User();
+				user.setName(name);
+				user.setPassword(password);
+				facade.registerUser(user);
+				request.getRequestDispatcher("registersuccess.jsp").forward(request, response);
+			}
+			if (op.contentEquals("check")) {
+				String name = request.getParameter("id");
+				String password = request.getParameter("password");
+				User user = facade.check(name, password);
+				if (user==null) {
+					request.getRequestDispatcher("loginfailure.jsp").forward(request, response);
+				} else {
+					request.getSession().setAttribute("user", user);
+					request.getRequestDispatcher("loginsuccess.jsp").forward(request, response);
+				}
 			}
 		} else {
 			doGet(request, response);

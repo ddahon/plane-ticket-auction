@@ -8,6 +8,7 @@ import java.util.LinkedList;
 
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
@@ -55,6 +56,23 @@ public class Facade {
 			return res;
 		}
 
+	}
+	
+	// Register a new user
+	public void registerUser(User user) {
+		em.persist(user);
+	}
+	
+	// Return the User corresponding to the username and password (or null if they are not valid)
+	public User check(String name, String password) {
+		TypedQuery<User> req = em.createQuery("select user from User user where password='"+password+"' and name='"+name+"'", User.class);
+		try {
+			User user = req.getSingleResult();
+			return user;
+		} catch (NoResultException e) {
+			return null;
+		}
+		
 	}
 	
 	
