@@ -11,29 +11,17 @@
 	<h1>Confirmer Mon Achat</h1>
 	<form action="achat.jsp" method=get>
 	    <%
-	        Ticket airlinename = (Ticket) request.getAttribute("airlineName");
-		    out.println(airlinename.getAirlineName());
+	        Ticket ticket = (Ticket)request.getAttribute("Ticket");
+		    out.println(ticket.getAirlineName());
+		    out.println(ticket.getOriginalSeller());
+		    out.println(ticket.getOwner());
+		    out.println(ticket.getTicketNumber());
+		    out.println(ticket.getPrice());
 		    
-	        Ticket flightNumber = (Ticket) request.getAttribute("flight");
-		    out.println(flightNumber.getFlight());
-		    
-	        Ticket orignalSeller = (Ticket) request.getAttribute("orignalSeller");
-		    out.println(orignalSeller.getOriginalSeller());
-		    
-	        Ticket owner = (Ticket) request.getAttribute("owner");
-		    out.println(owner.getOwner());
-		    
-	        Ticket ticketnumber = (Ticket) request.getAttribute("ticketnumber");
-		    out.println(ticketnumber.getTicketNumber());
-		    
-	        Ticket price = (Ticket) request.getAttribute("price");
-		    out.println(price.getPrice());
-		    
-
         %>
         </form>
 
-	<form action="Serv?op=add_auction" method=post>
+	<form action="Serv?op=Confirmer" method=post>
 	<input type="submit" value="Acheter"><br/>
     </form>
 
