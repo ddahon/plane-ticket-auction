@@ -40,6 +40,7 @@ background-color:yellow;
 	        <li><a href="recherche.jsp">Buy</a></li>
 	        <li><a href="login.jsp">Sell</a></li>
 	        <li><a href="login.jsp">Login</a></li>
+		 <li><a href="logout.jsp">Logout</a></li>
 	      </ul>
 	    </div>
 	  </div>
