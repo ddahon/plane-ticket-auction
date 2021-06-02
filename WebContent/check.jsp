@@ -19,6 +19,7 @@ if(id.equals(name)&&password1.equals(password))
 { response.sendRedirect("loginsuccess.jsp");}
 else
 response.sendRedirect("loginfailure.jsp");
+
 %>
 </form>
 </body>
