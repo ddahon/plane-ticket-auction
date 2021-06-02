@@ -1,0 +1,45 @@
+/*左边复选框↓*/
+
+.personal-leftlist {
+	border: 1px solid #eaeaea;
+	padding-top: 24px;
+	width: 178px;
+	height: 802px;
+	text-align: left;
+}
+
+.personal-sideitem {
+	margin-bottom: 40px;
+}
+
+.personal-headtxt {
+	cursor: default;
+	padding-left: 43px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 18px;
+	margin: 16px 0;
+}
+
+.personal-sideitem>ul>li>a {
+	font-size: 14px;
+	display: block;
+	padding-left: 41px;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+	line-height: 18px;
+	margin: 16px 0;
+	color: #666666;
+}
+
+.personal-sideitem>ul>li>a.active {
+	color: #b4a078;
+	border-left-color: #BEA988;
+}
+
+.personal-sideitem>ul>li>a:hover {
+	color: #B4A078;
+}
+
+
+/*左边复选框↑*/

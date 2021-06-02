@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style_bootstrap.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<title>Rechercher un billet</title>
@@ -29,7 +29,7 @@
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="login.jsp">Sell</a></li>
+	        <li><a href="Serv?op=goto_sell">Sell</a></li>
 	        <li><a href="login.jsp">Login</a></li>
 	      </ul>
 	    </div>

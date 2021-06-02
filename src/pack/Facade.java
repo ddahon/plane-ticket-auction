@@ -75,6 +75,10 @@ public class Facade {
 		
 	}
 	
+	public Ticket getTicket(int ticketNumber) {
+		return em.find(Ticket.class, ticketNumber);
+	}
+	
 	
 	
 }

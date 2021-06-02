@@ -124,6 +124,12 @@ public class Serv extends HttpServlet {
 					request.getRequestDispatcher("loginsuccess.jsp").forward(request, response);
 				}
 			}
+			if (op.contentEquals("acheter")) {
+				int ticketNumber = Integer.parseInt(request.getParameter("ticketNumber"));
+				Ticket ticket = facade.getTicket(ticketNumber);
+				request.setAttribute("ticket", ticket);
+				request.getRequestDispatcher("achat.jsp").forward(request, response);
+			}
 		} else {
 			doGet(request, response);
 		}

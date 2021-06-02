@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-utf-8">
 <title>login</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_bootstrap.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -29,7 +29,7 @@
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="recherche.jsp">Buy</a></li>
-	        <li><a href="vente.jsp">Sell</a></li>
+	        <li><a href="Serv?op=goto_sell">Sell</a></li>
 	        <li><a href="logout.jsp">Logout</a></li>
 	      </ul>
 	    </div>

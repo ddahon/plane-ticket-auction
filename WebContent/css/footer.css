@@ -1,0 +1,288 @@
+
+
+
+/*页脚部分*/
+
+.footbox {
+	width: 100%;
+	line-height: 1.5;
+	color: #333;
+	font-size: 12px;
+	margin-top: 50px;
+}
+
+
+/*页脚1*/
+
+.footbox-ft1 {
+	padding-top: 60px;
+	padding-bottom: 34px;
+	background-color: #fff;
+	border-top: 1px solid #e8e8e8;
+}
+
+.ft1-item {
+	width: 362.66px;
+	height: 204px;
+	border-left: 1px solid #e9e9e9;
+	text-align: center;
+}
+
+.ft1-item:nth-child(1) {
+	border-left: 0;
+}
+
+
+/*第一个item*/
+
+.ft1-item h4 {
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 28px;
+	line-height: 1;
+}
+
+.ft1-item-a {
+	width: 78px;
+	height: 73px;
+	font-size: 14px;
+	background-color: #fff;
+	padding-top: 25px;
+	text-align: center;
+	border: 1px solid #E8E8E8;
+	color: #333;
+	cursor: pointer;
+	vertical-align: middle;
+	letter-spacing: normal;
+	line-height: 26px;
+	border-radius: 2px;
+	display: inline-block;
+}
+
+.ft1-item-a:last-child {
+	margin-left: 29px;
+}
+
+.icon-kefu {
+	height: 26px;
+	width: 31px;
+	display: inline-block;
+	vertical-align: top;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -232px no-repeat;
+}
+
+.kefu-book {
+	margin-top: 10px;
+}
+
+.icon-fankui {
+	height: 27px;
+	width: 30px;
+	display: inline-block;
+	vertical-align: top;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -98px no-repeat;
+}
+
+.fankui-book {
+	margin-top: 10px;
+}
+
+.ft1-item-a:hover .icon-kefu {
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -196px no-repeat;
+}
+
+.ft1-item-a:hover .kefu-book {
+	color: #b4a078;
+}
+
+.ft1-item-a:last-child:hover .icon-fankui {
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -61px no-repeat;
+}
+
+.ft1-item-a:last-child:hover .fankui-book {
+	color: #b4a078;
+}
+
+
+/*第二个item*/
+
+.whatisyx {
+	padding: 0 37px;
+	text-align: center;
+	line-height: 1;
+	color: #333;
+	font-size: 12px;
+}
+
+.whatisyx>p {
+	text-align: left;
+	font-size: 13px;
+	line-height: 23px;
+	margin-bottom: 22px;
+}
+
+.floowus {
+	padding: 0 37px;
+	line-height: 1;
+	text-align: left;
+	color: #333;
+	font-size: 12px;
+}
+
+.floowus>p {
+	margin-right: 15px;
+	font-size: 14px;
+	line-height: 32px;
+	float: left;
+}
+
+.floow-icon {
+	margin-right: 15px;
+	padding-bottom: 10px;
+}
+
+.icon-yxfoot1 {
+	display: inline-block;
+	vertical-align: top;
+	height: 32px;
+	width: 32px;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -413px no-repeat;
+}
+
+.icon-yxfoot2 {
+	display: inline-block;
+	vertical-align: top;
+	height: 32px;
+	width: 32px;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -371px no-repeat;
+}
+
+.icon-yxfoot3 {
+	display: inline-block;
+	vertical-align: top;
+	height: 32px;
+	width: 32px;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -268px no-repeat;
+}
+
+
+/*第三个item*/
+
+.icon-appdl {
+	width: 104px;
+	height: 104px;
+	margin: 0 auto;
+	background: url(../img/icon-appdl.png);
+}
+
+.appdl-book {
+	color: #b4a078;
+	font-size: 12px;
+	margin-top: 3px;
+}
+
+
+/*页脚2*/
+
+.footbox-ft2 {
+	height: 167px;
+	padding-top: 37px;
+	background-color: #414141;
+}
+
+
+/*一部分*/
+
+.ft2-siteEnsure {
+	margin-bottom: 30px;
+}
+
+.ft2-siteEnsure li {
+	float: left;
+	width: 33.333333%;
+	text-align: center;
+}
+
+.site-inner {
+	font-size: 18px;
+	line-height: 51px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.icon-tuihuo {
+	margin-right: 17px;
+	height: 51px;
+	width: 51px;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -310px no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.icon-mianyou {
+	margin-right: 17px;
+	height: 51px;
+	width: 51px;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.icon-zhibao {
+	margin-right: 17px;
+	height: 51px;
+	width: 51px;
+	background: url(../img/icon-yxfoot-sd12b4b6a14-1c34a0ea19.png) 0 -135px no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.inner-book {
+	color: #FFFFFF;
+}
+
+
+/*分割线hr*/
+
+.ft2-hr {
+	height: 1px;
+	margin-bottom: 27px;
+	background-color: #4f4f4f;
+	border: 0;
+}
+
+
+/*二部分*/
+
+.ft2-siteInfo {
+	text-align: center;
+	color: #999;
+}
+
+.info-nav a {
+	cursor: pointer;
+	color: #999;
+}
+
+.info-nav b {
+	margin: auto 13px;
+	font-weight: bold;
+}
+
+.info-copyRight a {
+	cursor: pointer;
+	color: #999;
+}
+
+.info-business {
+	display: block;
+	width: 36px;
+	right: 66px;
+	top: -4px;
+}
+
+.info-business img {
+	display: block;
+	width: 36px;
+	height: 39px;
+}
